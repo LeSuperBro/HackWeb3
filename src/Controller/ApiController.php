@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Hackathons;
 use App\Entity\Participant;
-use App\Entity\Participantevenement;
+use App\Entity\ParticipantEvenement;
 use App\Service\PdoHackathons;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -104,7 +104,7 @@ class ApiController extends AbstractController
          {
             $tabd = json_decode($content, true) ;
             dump($tabd);
-            $p = new Participantevenement($tabd);
+            $p = new ParticipantEvenement($tabd);
             dump($p);
             $monPdo -> setParticipation($p);
          }            

@@ -15,8 +15,8 @@ class PdoHackathons
 	{
 
 		$serveur = 'mysql:host=192.168.4.1:3306';
-		$bdd = 'dbname=bdaabderrahmann7';
-		$user = 'sqlaabderrahmann';
+		$bdd = 'dbname=bdjmartin7';
+		$user = 'sqljmartin';
 		$mdp = 'savary';
 		PdoHackathons::$monPdo = new PDO(
 			$serveur . ';' . $bdd,
@@ -74,7 +74,7 @@ class PdoHackathons
 	public function setParticipation($p)
 	{
 
-		$req = "insert into participantevenement(Nom, Prenom, Mail, IdEvenement) values(:nom,:prenom,:Mail,:IdEvenement)";
+		$req = "insert into participantEvenement(Nom, Prenom, Mail, IdEvenement) values(:nom,:prenom,:Mail,:IdEvenement)";
 		$res = PdoHackathons::$monPdo->prepare($req);
 		$res->bindValue(':nom', $p->getNom());
 		$res->bindValue(':prenom', $p->getPrenom());
