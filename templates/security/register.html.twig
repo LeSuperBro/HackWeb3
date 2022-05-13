@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une série{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{% block javascripts %}
+<script type="text/javascript" src="{{asset("js/validForm.js")}}"></script>
+{% endblock %}
+
+<div class="container">
+    <center>
+   
+    <div style="font-size: 2em;font-weight: bold;margin-top:3%;margin-bottom:3%;">Formulaire d'inscription</div>
+ 
+    {{form_start(monForm)}}
+    <br>
+  {{form_row(monForm.nom)}}
+    <br>
+{{form_row(monForm.prenom)}}
+  <br>
+{{form_row(monForm.mail)}}
+  <br>
+{{form_row(monForm.telephone)}}
+  <br>
+{{form_row(monForm.datedenaissance)}}
+  <br>
+{{form_row(monForm.lienportfolio)}}
+  <br>
+{{form_row(monForm.password)}}
+  <br>
+<span class="text-danger" id="erreur"></span>
+        <input type="submit" value="S'inscrire" id="btnSubmit" name="inscrire">
+    {{form_end(monForm)}}
+     </center>
+</div>
+{% endblock %}
